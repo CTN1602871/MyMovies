@@ -1,0 +1,918 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#myInput {
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+
+</style>
+</head>
+<body>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+
+<table id="myTable">
+<tr class = "header">
+<th style="width:25%;">Name</th>
+<th style="width:10%;">Source</th>
+<th style="width:10%;">Genre</th>
+</tr>
+<tr><td>12 Angry Men<td>Apple<td>Crime, drama</td></tr>
+<tr><td>12 Monkeys<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>12 Strong<td>Apple<td>War</td></tr>
+<tr><td>12 Years a Slave<td>Apple<td>Drama</td></tr>
+<tr><td>13 Assassins<td>Apple<td>Drama</td></tr>
+<tr><td>13 Hours The Secret Soldiers<td>4k<td>War</td></tr>
+<tr><td>13 Minutes<td>Apple<td>Action</td></tr>
+<tr><td>17 Again<td>Apple<td>Comedy</td></tr>
+<tr><td>1917<td>Apple<td>War</td></tr>
+<tr><td>2012<td>Apple 4k<td>Sc-Fi & Fantasy</td></tr>
+<tr><td>28 Days Later<td>Apple<td>Horror</td></tr>
+<tr><td>28 Weeks Later<td>Apple<td>Horror</td></tr>
+<tr><td>3:10 to Yuma<td>Google<td>Western</td></tr>
+<tr><td>300<td>Apple<td>History</td></tr>
+<tr><td>'71<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>A Few Good Men<td>Apple 4k<td>Drama</td></tr>
+<tr><td>A League of Their Own<td>Apple<td>Comedy</td></tr>
+<tr><td>A Monster Calls<td>Apple<td>Drama</td></tr>
+<tr><td>A Mouthful of Air<td>Apple<td>Drama</td></tr>
+<tr><td>A Quiet Place<td>Apple<td>Sci-Fi Aliens</td></tr>
+<tr><td>A Quiet Place Day One<td>Computer<td>Sci-Fi</td></tr>
+<tr><td>A Quiet Place II<td>Apple<td>Sci-Fi Aliens</td></tr>
+<tr><td>A Single Man<td>Computer<td>Drama</td></tr>
+<tr><td>A Town Like Alice<td>Computer<td>War</td></tr>
+<tr><td>A Vigilante<td>Apple<td>Action</td></tr>
+<tr><td>Ad Astra<td>Apple<td>Sci-Fi & Fantasy Space</td></tr>
+<tr><td>Aeon Flux<td>Apple<td>Sci-Fi & Fantasy Distopia</td></tr>
+<tr><td>AI Artificial Intelligence<td>Apple<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>AKIRA<td>Blu<td>Anime</td></tr>
+<tr><td>Alexander Revisited (the Final Cut)<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Alien 3<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Alien Resurrection<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Alien Romulus<td>Computer<td>Sci-fi</td></tr>
+<tr><td>Alien: Covenant<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Aliens<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Aliens (Special Edition) (HD)<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Alita: Battle Angel<td>Apple<td>Sci-Fi & Fantasy Distopia</td></tr>
+<tr><td>All Is Lost<td>Apple<td>Drama</td></tr>
+<tr><td>All Quiet on the Western Front (1930)<td>Apple<td>War</td></tr>
+<tr><td>All Quiet Western Front (2022)<td>Computer<td>War</td></tr>
+<tr><td>Almost Famous<td>Apple<td>Drama</td></tr>
+<tr><td>Alpha<td>Apple 4k<td>Action</td></tr>
+<tr><td>Amadeus (Director's Cut)<td>Apple<td>Drama</td></tr>
+<tr><td>American Assassin<td>Apple 4k<td>Action</td></tr>
+<tr><td>American Histroy X<td>Computer<td>Action</td></tr>
+<tr><td>American Insurrection<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>American Sniper<td>Apple<td>War</td></tr>
+<tr><td>Amistad<td>Blu<td>Drama</td></tr>
+<tr><td>Anatomy of a Murder<td>Apple<td>Drama</td></tr>
+<tr><td>Aniara<td>Blu<td>Sci-Fi & Fantasy Space</td></tr>
+<tr><td>Animatrix<td>Google<td>Anime</td></tr>
+<tr><td>Annihilation<td>Apple 4k<td>Sci-Fi Alien</td></tr>
+<tr><td>Antitrust<td>Apple<td>Thriller</td></tr>
+<tr><td>Ant-Man<td>Apple<td>Sci-Fi & Fantasy Superhero</td></tr>
+<tr><td>Ant-Man and the Wasp<td>Apple<td>Sci-Fi & Fantasy Superhero</td></tr>
+<tr><td>Any Given Sunday<td>Apple<td>Drama</td></tr>
+<tr><td>Apocalypse Now<td>Computer<td>War</td></tr>
+<tr><td>Apocalypse Now<td>Apple<td>War</td></tr>
+<tr><td>Apollo 13<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Apollo 13<td>Google<td>Action & Adventure</td></tr>
+<tr><td>Appleseed: Alpha<td>Apple<td>Anime</td></tr>
+<tr><td>Appleseed: Ex Machina<td>DVD<td>Anime</td></tr>
+<tr><td>Arbitrage<td>Google<td>Drama</td></tr>
+<tr><td>Arctic<td>Apple<td>Drama</td></tr>
+<tr><td>Armageddon<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Arrival<td>Apple<td>Sci-Fi & Fantasy Alien</td></tr>
+<tr><td>Assault On Precinct 13<td>Computer<td>Action</td></tr>
+<tr><td>Assualt on Wall Street<td>Google<td>Drama</td></tr>
+<tr><td>At Eternity's Gate - Van Gough<td>Apple<td>History</td></tr>
+<tr><td>AVATAR<td>Blu<td>Sci-Fi & Fantasy Distopia</td></tr>
+<tr><td>AVATAR Way of the Water<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Avengers: Age of Ultron<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Avengers: Endgame<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Avengers: Infinity War<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Babette's Feast<td>Apple / Google<td>Drama</td></tr>
+<tr><td>Baby Driver<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Babylon 5 Season 1<td>DVD<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Babylon 5 Season 2<td>DVD<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Babylon 5 Season 3<td>DVD<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Babylon 5 Season 4<td>DVD<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Babylon 5 Season 5<td>DVD<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Back to the Future<td>Apple 4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Backdraft<td>Apple 4k<td>Action</td></tr>
+<tr><td>Bad Education<td>Google<td>Drama</td></tr>
+<tr><td>Batman Begins<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Batman vs Superman<td>Apple<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Battle Ground<td>Apple<td>War</td></tr>
+<tr><td>Battlestar Galactica<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Beekeeper<td>Blu-ray<td>Drama, Action</td></tr>
+<tr><td>Beneath Hill 60<td>Apple<td>War</td></tr>
+<tr><td>Benediction<td>Apple<td>War</td></tr>
+<tr><td>Berserk: The Golden Age Arc I - The Egg of the King<td>Apple<td>Anime</td></tr>
+<tr><td>Big Fish<td>Apple<td>Drama</td></tr>
+<tr><td>Big Night<td>Apple<td>Drama</td></tr>
+<tr><td>Billy Lynn's Long Halftime Walk<td>Apple<td>Drama</td></tr>
+<tr><td>Black Hawk Down<td>Apple<td>War</td></tr>
+<tr><td>Black Narcissus<td>Computer<td>Drama</td></tr>
+<tr><td>Black Panther (2018)<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Black Sea<td>Apple<td>Thriller</td></tr>
+<tr><td>Black Widow<td>Apple 4k<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Blade Runner<td>4k<td>Sci-Fi</td></tr>
+<tr><td>Blade Runner 2049<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Body of Lies<td>Computer<td>Action</td></tr>
+<tr><td>Bohemian Rhapsody<td>Google<td>Drama</td></tr>
+<tr><td>Boiling Point<td>Apple<td>Drama</td></tr>
+<tr><td>Boss Level<td>Apple<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Bram Stoker's Dracula<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Brazil<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Bridge of Spies (HD)<td>Apple<td>Drama</td></tr>
+<tr><td>Bridge on the River Kwai<td>Apple<td>War, history, action</td></tr>
+<tr><td>Bright Star<td>Apple<td>Romance</td></tr>
+<tr><td>Broadcast News<td>Computer<td>Drama</td></tr>
+<tr><td>Broken Arrow<td>Apple<td>Action</td></tr>
+<tr><td>Butch Cassidy and the Sundance Kid<td>Apple<td>Western</td></tr>
+<tr><td>Calvary<td>Blu<td>Drama</td></tr>
+<tr><td>Cape Fear<td>Apple<td>Drama</td></tr>
+<tr><td>Captain Fantastic<td>Apple<td>Drama</td></tr>
+<tr><td>Carrie<td>Apple<td>Horror</td></tr>
+<tr><td>Cars<td>Apple<td>Kids & Family</td></tr>
+<tr><td>Casablanca<td>Apple<td>Classics</td></tr>
+<tr><td>Casino Royale<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Cast Away<td>Google Blu-Ray<td>Action & Adventure</td></tr>
+<tr><td>Changing Lanes<td>Computer<td>Action</td></tr>
+<tr><td>Chef<td>blu-ray<td>comedy</td></tr>
+<tr><td>Children of Men<td>Apple <td>Sci-Fi</td></tr>
+<tr><td>Cinderella<td>Apple<td>Drama</td></tr>
+<tr><td>Citizen Kane<td>DVD<td>Drama</td></tr>
+<tr><td>City of Lost Children<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Civil War<td>Computer<td>War</td></tr>
+<tr><td>Cleopatra<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Cliffhanger<td>Blu<td>Thriller</td></tr>
+<tr><td>Close Encounters of the Third Kind<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Cloud Atlas<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>CODA<td>Computer<td>Drama</td></tr>
+<tr><td>Coherence<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Collateral<td>Apple 4k<td>Action</td></tr>
+<tr><td>Color of Space<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Coma<td>Blu<td>Sci-Fi</td></tr>
+<tr><td>Come True<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Con Air<td>Computer<td>Action</td></tr>
+<tr><td>Conclave<td>Computer<td>Drama, electing a new pope</td></tr>
+<tr><td>Contact<td>Apple<td>Drama</td></tr>
+<tr><td>Contagion<td>Apple<td>Thriller</td></tr>
+<tr><td>Cowboy Bebop<td>DVD<td>Anime</td></tr>
+<tr><td>Critical Thinking<td>Apple<td>Drama</td></tr>
+<tr><td>Cronos<td>Apple<td>Horror</td></tr>
+<tr><td>Croupier<td>Apple<td>Drama</td></tr>
+<tr><td>Dan in real life<td>Computer<td>Romance / Comedy</td></tr>
+<tr><td>Dances with Wolves<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Danger Close: The Battle of Long Tan<td>Apple<td>War</td></tr>
+<tr><td>Dark City<td>Apple<td>Sc-Fi & Fantasy</td></tr>
+<tr><td>Dark Horse<td>Apple<td>Drama</td></tr>
+<tr><td>Dark Passage<td>Apple<td>Drama</td></tr>
+<tr><td>Dark Waters<td>Google<td>Drama</td></tr>
+<tr><td>Darkest Hour<td>Apple<td>Drama</td></tr>
+<tr><td>Das Boot<td>Google<td>War</td></tr>
+<tr><td>Dawn of the Dead<td>Apple<td>Zombies, horror, drama, action</td></tr>
+<tr><td>Dawn of the Justice League<td>Apple<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Dawn of the Planet of the Apes<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Deadpool<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Deadpool 2<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Dean Spanley<td>Apple<td>Fantasy, Drama</td></tr>
+<tr><td>Deep Impact<td>Apple 4k<td>Action</td></tr>
+<tr><td>Deepwater Horizon<td>Apple & 4k Disk<td>Action & Adventure</td></tr>
+<tr><td>Defiance<td>Blu-ray<td>War, Action, Drama</td></tr>
+<tr><td>Delicious<td>Apple<td>Drama, Historical</td></tr>
+<tr><td>Destination Wedding<td>Computer<td>Drama Comedy</td></tr>
+<tr><td>Detective Dee and the Mystery of the Phantom Flame<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Detective Dee The Four Heavenly Kings<td>Apple<td>Fantasy</td></tr>
+<tr><td>Dial M for Murder<td>Apple<td>Drama Hitchcock</td></tr>
+<tr><td>Die Hard<td>Apple 4k<td>Action</td></tr>
+<tr><td>Disturbia<td>Apple<td>Drama</td></tr>
+<tr><td>Doctor Strange<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Doctor Strange<td>4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Doctor Strange Multiuniverse<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Donnie Darko<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Double Indemnity<td>Apple<td>Drama</td></tr>
+<tr><td>Downfall<td>Computer / Apple / Bluray<td>War</td></tr>
+<tr><td>Dracula<td>Apple 4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Draft Day<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Dredd<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Drive<td>Action<td>Computer</td></tr>
+<tr><td>Dune<td>Apple & Prime<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Dune 2<td>Apple<td>Sci-Fi Fantasy</td></tr>
+<tr><td>Dune Prphecy<td>Computer<td>Sci-Fi</td></tr>
+<tr><td>Dunkirk<td>Apple<td>War</td></tr>
+<tr><td>Edge of Tomorrow<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Elysium<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Empire of the Sun<td>Apple<td>War</td></tr>
+<tr><td>Enders Game<td>Computer<td>Sci-fi</td></tr>
+<tr><td>Ender's game<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Enemy Of The State<td>Computer<td>Drama</td></tr>
+<tr><td>Equalizer 1<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Equalizer 2<td>Google & Apple 4k<td>Action & Adventure</td></tr>
+<tr><td>Equalizer 3<td>Apple<td>Crime, Action</td></tr>
+<tr><td>Escape From New York<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Escape Room<td>Apple 4k<td>Action, Sci-Fi</td></tr>
+<tr><td>Escape Room Tournament<td>Apple 4k<td>Action</td></tr>
+<tr><td>Europa Report<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Evangelion Thrice Upon A Time<td>Computer<td>Sci-fi</td></tr>
+<tr><td>Evangelion You Are (Not) Alone<td>Blu<td>Anime</td></tr>
+<tr><td>EVANGELION you can (not) redo<td>Blu<td>Anime</td></tr>
+<tr><td>EVANGELION YOU CAN NOT ADVANCE<td>Blu<td>Anime</td></tr>
+<tr><td>Everest<td>4K<td>Action</td></tr>
+<tr><td>Everest<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Everything Everywhere All at Once<td>Apple<td>Sci Fi</td></tr>
+<tr><td>Ex Machina<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Eye in the Sky<td>Apple<td>War</td></tr>
+<tr><td>Fall<td>Apple<td>Action</td></tr>
+<tr><td>Falling Down<td>Computer<td>Drama</td></tr>
+<tr><td>Falling Skies<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Fantastic Beasts and Where to Find Them<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Fantastic Mr. Fox<td>Apple<td>Comedy</td></tr>
+<tr><td>Far From The Madding Crowd<td>Apple<td>Romance</td></tr>
+<tr><td>Fearless<td>Apple<td>Drama</td></tr>
+<tr><td>Fearless<td>Computer<td>Drama Action</td></tr>
+<tr><td>Felony <td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Ferris Buellers Day Off<td>Apple<td>Comedy</td></tr>
+<tr><td>Field of Dreams<td>Apple<td>Drama</td></tr>
+<tr><td>Fight Club<td>Apple<td>Action</td></tr>
+<tr><td>Final Fantasy<td>Apple<td>Anime</td></tr>
+<tr><td>Finding Forrester<td>Apple<td>Drama</td></tr>
+<tr><td>Finding Neverland<td>Computer<td>Drama</td></tr>
+<tr><td>First Man<td>Apple<td>Drama</td></tr>
+<tr><td>First Reformed<td>Apple<td>Drama</td></tr>
+<tr><td>Five Flights Up<td>Computer<td>Drama</td></tr>
+<tr><td>Flags of our Fathers<td>Apple<td>War</td></tr>
+<tr><td>Flatliners<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Flight<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Flight of the Phoenix<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Ford v Ferrari<td>4k<td>Action</td></tr>
+<tr><td>Four brothers<td>Apple<td>Drama</td></tr>
+<tr><td>Frequencies<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Friday Night Lights<td>Apple<td>Drama</td></tr>
+<tr><td>Fried Green Tomatoes<td>Computer<td>Drama</td></tr>
+<tr><td>Full Metal Jacket<td>Google<td>War</td></tr>
+<tr><td>Furiosa<td>Computer<td>Sci-fi Action </td></tr>
+<tr><td>Fury<td>Apple<td>War</td></tr>
+<tr><td>Game Night<td>Apple<td>Comedy</td></tr>
+<tr><td>Gattaca<td>Apple <td>Sci-Fi</td></tr>
+<tr><td>Get the Gringo<td>Apple<td>Action</td></tr>
+<tr><td>Ghost in the Shell<td>Blu<td>Anime</td></tr>
+<tr><td>Ghost In the Shell<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Ghost in the Shell 2.0<td>Blu<td>Anime</td></tr>
+<tr><td>Ghost In the Shell: The Laughing Man<td>Apple<td>Anime</td></tr>
+<tr><td>Gladiator<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Gladiator<td>Apple<td>Drama</td></tr>
+<tr><td>Gladiator<td>4k<td>Action & Adventure</td></tr>
+<tr><td>Glengarry Glen Ross<td>Computer<td>Drama</td></tr>
+<tr><td>Godfather<td>Apple<td>Drama</td></tr>
+<tr><td>Godzilla<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Godzilla King of the Monsters<td>Computer<td>Sci-Fi</td></tr>
+<tr><td>Godzilla Minus One<td>Computer<td>Sci-fi</td></tr>
+<tr><td>Godzilla vs Kong<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Good Fellas<td>Apple<td>Drama</td></tr>
+<tr><td>Good Kill<td>Apple<td>War</td></tr>
+<tr><td>Good Night And Good Luck<td>Computer<td>Historical, Drama</td></tr>
+<tr><td>Gravity<td>Apple<td>Drama</td></tr>
+<tr><td>Green Book<td>Computer<td>Drama</td></tr>
+<tr><td>Ground Hog Day<td>Apple 4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Guardians of the Galaxy<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Guardians of the Galaxy 2<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Guardians of the Galaxy Vol 3<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Guess Who's Coming To Dinner<td>Computer<td>Drama</td></tr>
+<tr><td>Hackers<td>Apple<td>Drama</td></tr>
+<tr><td>Hacksaw Ridge<td>Apple<td>War</td></tr>
+<tr><td>Hanna <td>Blu<td>Thriller</td></tr>
+<tr><td>Harakiri <td>Computer<td>War</td></tr>
+<tr><td>Hara-Kiri: Death of a Samurai<td>Apple<td>Drama</td></tr>
+<tr><td>Harry Brown<td>Blu<td>Drama</td></tr>
+<tr><td>Harry Potter and the Deathly Hallows - Part 1<td>Apple 4k Google 4k disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Harry Potter and the Deathly Hallows - Part 2<td>Apple 4k Google 4k disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Harry Potter and the Half-Blood Prince<td>Apple 4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Harry Potter Order of the Pheonix<td>Apple 4k<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Haute Cuisine<td>Apple<td>Drama</td></tr>
+<tr><td>Headhunters<td>Apple<td>Thriller</td></tr>
+<tr><td>Heart of the Sea<td>Apple 4k<td>Action</td></tr>
+<tr><td>Heartbreak Ridge<td>Apple<td>War</td></tr>
+<tr><td>Heat<td>Apple<td>Crime Drama</td></tr>
+<tr><td>Hell or High Water<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Hellboy<td>4k<td>Sci-Fi</td></tr>
+<tr><td>Hellboy 2 The Golden Army<td>Apple 4k<td>Sci-Fi</td></tr>
+<tr><td>Her<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Hero<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>High and Low<td>Computer<td>Drama</td></tr>
+<tr><td>High Life<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>High Plain Drifter<td>Apple<td>Western</td></tr>
+<tr><td>Hobbit Desolation of Smaug<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Hostiles<td>Google<td>Western</td></tr>
+<tr><td>Hotel Mumbai<td>Apple<td>Drama</td></tr>
+<tr><td>Howl's Moving Castle<td>Blu<td>Anime</td></tr>
+<tr><td>Hugo<td>Blu<td>Drama</td></tr>
+<tr><td>Hunger Games<td>Apple 4k<td>Sci-Fi</td></tr>
+<tr><td>Hunger Games Catching Fire<td>Apple 4k<td>Sci-Fi</td></tr>
+<tr><td>Hunt for Red October<td>Apple<td>War</td></tr>
+<tr><td>Hunt For The Wilderpeople<td>Computer<td>Drama, Comedy</td></tr>
+<tr><td>Hunter Killer<td>Apple<td>War</td></tr>
+<tr><td>Hurt Locker<td>Apple 4k<td>War</td></tr>
+<tr><td>Hyena Road<td>Apple<td>War</td></tr>
+<tr><td>I Am Legend<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Ikiru<td>Apple<td>Classics</td></tr>
+<tr><td>In A Lonely Place<td>Apple<td>Crime</td></tr>
+<tr><td>In Bruges<td>Computer<td>Drama</td></tr>
+<tr><td>In the Heat of the Night<td>Computer<td>Action</td></tr>
+<tr><td>In Time <td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Inception<td>4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Inception <td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Independence Day<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Inside Llewyn Davis<td>Apple<td>Drama</td></tr>
+<tr><td>Inside Man<td>Apple<td>Action</td></tr>
+<tr><td>Interstellar<td>4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Interstellar<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Into the Storm<td>Apple<td>Drama</td></tr>
+<tr><td>J. Edgar<td>Blu<td>Drama</td></tr>
+<tr><td>Jack Reacher<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Jack Ryan: Shadow Recruit<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Jason Bourne<td>Apple 4k<td>Action</td></tr>
+<tr><td>Jaws<td>Apple 4k<td>Drama</td></tr>
+<tr><td>Jeremiah Johnson<td>Computer<td>Western</td></tr>
+<tr><td>John Adams 1<td>Computer<td>History</td></tr>
+<tr><td>John Adams 2<td>Computer<td>History</td></tr>
+<tr><td>John Adams 3<td>Computer<td>History</td></tr>
+<tr><td>John Adams 4<td>Computer<td>History</td></tr>
+<tr><td>John Adams 5<td>Computer<td>History</td></tr>
+<tr><td>John Adams 6<td>Computer<td>History</td></tr>
+<tr><td>John Adams 7<td>Computer<td>History</td></tr>
+<tr><td>John Wick<td>Apple & 4k<td>Action & Adventure</td></tr>
+<tr><td>John Wick 4<td>Apple<td>Crime, Action, Drama</td></tr>
+<tr><td>John Wick: Chapter 3 Parabellum<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>John Wick: Chapter Two<td>Apple & 4k<td>Action & Adventure</td></tr>
+<tr><td>Journey to the Center of the Earth<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Journey's End<td>Apple<td>War</td></tr>
+<tr><td>Julia & Julie<td>Apple<td>Drama</td></tr>
+<tr><td>Jumanji<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Jumanji: The Next Level<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Jumanji: Welcome to the Jungle<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Jurassic Dominion<td>Apple <td>Sc-Fi & Fantasy</td></tr>
+<tr><td>Jurassic Park<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Jurassic Park 3<td>Apple<td>Fantasy</td></tr>
+<tr><td>Jurassic World<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Jurassic World: Dominion<td>Apple<td>Sci Fi</td></tr>
+<tr><td>Jurassic World: Fallen Kingdom<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Just Mercy<td>Google<td>Crime</td></tr>
+<tr><td>Key Largo<td>Apple<td>Drama Bogart Bacall</td></tr>
+<tr><td>Kiki's Delivery Service<td>Blu<td>Anime</td></tr>
+<tr><td>Kill the Messenger<td>Apple<td>Drama</td></tr>
+<tr><td>Killing them softly<td>Apple<td>Action</td></tr>
+<tr><td>King Arthur: Legend of the Sword<td>4k<td>Action</td></tr>
+<tr><td>King Kong<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Kingsman: The Secret Service<td>Apple<td>Thriller</td></tr>
+<tr><td>Knight and Day<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Kokoda<td>Apple<td>War</td></tr>
+<tr><td>Kong: Skull Island<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Kubo and the Two Strings<td>Apple<td>Anime</td></tr>
+<tr><td>LA Confidential<td>Apple<td>Drama</td></tr>
+<tr><td>La Vie En Rose<td>Blu<td>Drama</td></tr>
+<tr><td>Labyrinth<td>Apple<td>Fantasy</td></tr>
+<tr><td>Laputa: Castle in the Sky 1986<td>Blu<td>Anime</td></tr>
+<tr><td>Last Night in Soho<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Law Abiding Citizen<td>Apple 4k<td>Action</td></tr>
+<tr><td>Lawless <td>Blu<td>Thriller</td></tr>
+<tr><td>Lawrence of Arabia<td>Apple<td>War</td></tr>
+<tr><td>Lee<td>Computer<td>War, Drama, photographer, holocaust</td></tr>
+<tr><td>Leon: The Professional<td>Apple<td>Drama</td></tr>
+<tr><td>Les Miserables<td>Blu<td>Drama</td></tr>
+<tr><td>Let The Right One In<td>Computer<td>Sci-Fi Fantasy</td></tr>
+<tr><td>Letters to Iwo Jima<td>Apple<td>War</td></tr>
+<tr><td>Letters to Juliet<td>Apple<td>Drama</td></tr>
+<tr><td>Lewis & Clark: A Film by Ken Burns<td>DVD<td>Action & Adventure</td></tr>
+<tr><td>Life<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Life of Pi<td>Apple<td>Drama</td></tr>
+<tr><td>Limitless <td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Lion of the Desert<td>Apple<td>War</td></tr>
+<tr><td>Living<td>Apple<td>History, Drama</td></tr>
+<tr><td>Locke<td>Apple<td>Thriller</td></tr>
+<tr><td>Logan<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Lone Survivor<td>Apple<td>War</td></tr>
+<tr><td>Looper <td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Lord Of War<td>Blu<td>Thriller</td></tr>
+<tr><td>Lost in Space<td>Computer<td>Sci-fi</td></tr>
+<tr><td>Lost In Space<td>Apple / from computer Apple captions<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Lost In Translation<td>Apple<td>Drama</td></tr>
+<tr><td>Loving Vincent<td>Prime<td>Anime</td></tr>
+<tr><td>Lucy<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Lucy<td>4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Lupin III: The Castle of Cagliostro<td>Blu<td>Anime</td></tr>
+<tr><td>Mad Max 2 - The Road Warrior<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Mad Max 3 - Beyond Thunderdome<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Mad Max: Fury Road<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Madagascar<td>Apple<td>Kids & Family</td></tr>
+<tr><td>Man Of Steel <td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Man of Tai Chi<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Many Saints of Newark<td>Apple<td>Action</td></tr>
+<tr><td>Margin Call<td>Blu ray / Apple<td>Drama</td></tr>
+<tr><td>Martha Marcy May Marlene<td>Blu<td>Drama</td></tr>
+<tr><td>Master and Commander: The Far Side of the World<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Matrix Resurrections<td>Apple<td>Sci-fi</td></tr>
+<tr><td>Maze Runner: The Death Cure<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Maze Runner: The Scorch Trials<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Memoir of Snail<td>Computer<td>Anime</td></tr>
+<tr><td>Memories<td>DVD<td>Anime</td></tr>
+<tr><td>Men Of Honor<td>Computer<td>Action</td></tr>
+<tr><td>Metropolis<td>DVD<td>Anime</td></tr>
+<tr><td>Metropolis Original<td>DVD<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Michael Clayton<td>Apple<td>Drama</td></tr>
+<tr><td>Miday<td>Google<td>Action & Adventure</td></tr>
+<tr><td>Midnight in Paris<td>Apple<td>Comedy</td></tr>
+<tr><td>Midnight Special<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Minamata<td>Google<td>Drama</td></tr>
+<tr><td>Misery<td>Google<td>Drama</td></tr>
+<tr><td>Miss Peregrines Hoe For Peculiar Children<td>Apple<td>Sc-Fi & Fantasy</td></tr>
+<tr><td>Miss Sloane<td>Apple<td>Drama</td></tr>
+<tr><td>Mission Impossible Ghost Protocol<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Mission to Mars<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Mission: Impossible - Fallout<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Mission: Impossible – Rogue Nation<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Money Monster<td>Apple<td>Drama</td></tr>
+<tr><td>Monsters of Men<td>Apple 4k<td>War</td></tr>
+<tr><td>Monsters, Inc.<td>Apple<td>Kids & Family</td></tr>
+<tr><td>Moon<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Moonlight <td>Blu<td>Drama</td></tr>
+<tr><td>Motherless Brooklyn<td>Apple<td>Drama</td></tr>
+<tr><td>Mr Magorium's Wonder Emporium<td>Computer<td>Sci-Fi Fantasy</td></tr>
+<tr><td>Mr. Holmes<td>Apple<td>Drama</td></tr>
+<tr><td>Mr. Turner<td>Apple<td>Drama</td></tr>
+<tr><td>Mulholland Drive<td>Computer<td>Drama</td></tr>
+<tr><td>My Neighbor Totoro<td>Blu<td>Anime</td></tr>
+<tr><td>Mystery Road <td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Napoleon<td>Computer<td>History, War, Drama</td></tr>
+<tr><td>National Bird: Drone Wars<td>Apple<td>Documentary</td></tr>
+<tr><td>National Treasure<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>National Treasure 2<td>Apple<td>Action</td></tr>
+<tr><td>Nausicaa of the Valley of the Wind<td>Blu<td>Anime</td></tr>
+<tr><td>Network<td>Apple<td>Drama</td></tr>
+<tr><td>Never Let Me Go<td>Computer<td>Drama</td></tr>
+<tr><td>New Jounery to the Centre of the Earth <td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Night of the Hunter<td>Apple<td>Drama</td></tr>
+<tr><td>Nightcrawler<td>Apple<td>Thriller</td></tr>
+<tr><td>No Sudden Move<td>Apple<td>Action Crime</td></tr>
+<tr><td>Nobody<td>Apple 4k<td>Action</td></tr>
+<tr><td>Nope<td>Apple<td>Sci-fi</td></tr>
+<tr><td>North by Northwest<td>Apple<td>Drama Hitchcock</td></tr>
+<tr><td>Now You See Me<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Now You See Me 2<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Oblivion<td>Apple & 4k disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Ocean's Eleven<td>Apple<td>Action</td></tr>
+<tr><td>Ocean's Thirteen<td>Apple<td>Action</td></tr>
+<tr><td>Of Gods And Men<td>DVD<td>Drama</td></tr>
+<tr><td>Old<td>Blu-ray<td>Sci-fi, drama</td></tr>
+<tr><td>Olympus Has Fallen<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Once Upon A Time in the West<td>Google<td>Western</td></tr>
+<tr><td>Once Were Warriors<td>Apple<td>Drama</td></tr>
+<tr><td>One Life<td>Computer / Apple<td>Drama, Action, War</td></tr>
+<tr><td>Only Lovers Left Alive<td>Apple<td>Drama</td></tr>
+<tr><td>Only the Brave<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Orange County<td>Amazon Prime<td>Drama</td></tr>
+<tr><td>Outbreak<td>Apple<td>Drama</td></tr>
+<tr><td>Pacific Rim<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Pacific Rim Uprising<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Pan's Labyrinth<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Paprika<td>Apple<td>Anime</td></tr>
+<tr><td>Paprika<td>DVD<td>Anime</td></tr>
+<tr><td>Parasite<td>Apple 4k<td>Drama</td></tr>
+<tr><td>Parts Per Billion<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Passengers<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Passengers<td>Apple 4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Patriot Games<td>Apple<td>Crime Action Drama</td></tr>
+<tr><td>Patriots Day<td>Apple<td>Drama</td></tr>
+<tr><td>Patton<td>Apple<td>War</td></tr>
+<tr><td>Pawn Sacrifice<td>Apple<td>Drama</td></tr>
+<tr><td>Performance<td>Apple<td>Drama</td></tr>
+<tr><td>Philadelphia<td>Computer<td>Drama</td></tr>
+<tr><td>Pig<td>Google<td>Drama</td></tr>
+<tr><td>Platoon<td>Apple & Google<td>War</td></tr>
+<tr><td>Pleasantville<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Point Blank<td>Apple<td>Drama</td></tr>
+<tr><td>Point Break<td>Blu<td>Drama</td></tr>
+<tr><td>Ponyo<td>Blu<td>Anime</td></tr>
+<tr><td>Porco Rosso<td>Blu<td>Anime</td></tr>
+<tr><td>Precious<td>Apple<td>Drama</td></tr>
+<tr><td>Predator<td>apple<td>sci-Fi & Fantasy</td></tr>
+<tr><td>Predators<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Predators<td>Apple & 4k disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Prey<td>Computer<td>Sci-Fi, Predator</td></tr>
+<tr><td>Princess Mononoke<td>Blu<td>Anime</td></tr>
+<tr><td>Prisoners <td>Blu<td>Drama</td></tr>
+<tr><td>Prometheus<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Public Enemies<td>Google<td>Action & Adventure</td></tr>
+<tr><td>Pulp Fiction<td>Apple<td>Thriller</td></tr>
+<tr><td>Quick and the dead<td>Apple<td>Western</td></tr>
+<tr><td>Rambo First Blood<td>Apple 4k<td>Action</td></tr>
+<tr><td>Ran<td>Apple & 4K disk<td>Action & Adventure</td></tr>
+<tr><td>Ratatouille<td>Apple<td>Kids & Family</td></tr>
+<tr><td>Ready Player One<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Real Steel<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Rear Window<td>Apple<td>Thriller</td></tr>
+<tr><td>Rebel without a cuase<td>Apple<td>Drama</td></tr>
+<tr><td>Red Cliff<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Red Cliff II<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Red Lights<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Red Planet<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Redline<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Reign of Fire<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Riddick<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Riders of Justice<td>Apple<td>Action</td></tr>
+<tr><td>Rings of Power<td>Computer<td>Sci-fi, Fantasy</td></tr>
+<tr><td>Rise of the Planet of the Apes<td>Apple 4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>River Cottage<td>Computer<td>Cooking, Farming, Drama</td></tr>
+<tr><td>Robin Hood<td>4k disk<td>History</td></tr>
+<tr><td>Rogue One<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Ronin<td>Apple<td>Action</td></tr>
+<tr><td>Rope<td>Apple<td>Thriller</td></tr>
+<tr><td>Run All Night<td>Apple<td>Crime Action</td></tr>
+<tr><td>Sabrina<td>Computer<td>Drama</td></tr>
+<tr><td>Safe House<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Salt<td>Blu & 4k disk<td>Action & Adventure</td></tr>
+<tr><td>San Andreas<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Sanctum<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Sanjuro<td>Blu-ray<td>History - Japanese</td></tr>
+<tr><td>Saving Private Ryan<td>Apple<td>War</td></tr>
+<tr><td>Schindler's List<td>Apple<td>War</td></tr>
+<tr><td>Scott of the Antarctic<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>SEAL Team Six<td>Blu<td>War</td></tr>
+<tr><td>Serenity<td>Computer<td>Sci-Fi Fantasy</td></tr>
+<tr><td>Seven Samurai<td>Computer<td>History</td></tr>
+<tr><td>Seven Years in Tibet<td>Google<td>Drama</td></tr>
+<tr><td>Shackleton<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Shadow<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Shawshank Redemption<td>Apple<td>Drama</td></tr>
+<tr><td>Sherlock Holmes<td>Apple 4k, Blu ray<td>Action & Adventure</td></tr>
+<tr><td>Sherlock Holmes: A Game of Shadows<td>Blu ray<td>Action & Adventure</td></tr>
+<tr><td>Sherlock Series<td>Blu<td>Action, Dram</td></tr>
+<tr><td>Shogun<td>Computer <td>History, Drama</td></tr>
+<tr><td>Shooter<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Sicario<td>Apple 4k<td>Thriller</td></tr>
+<tr><td>Sicario: Day of the Soldado<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Signs<td>Google<td>Sci-Fi</td></tr>
+<tr><td>Silence<td>Apple<td>Drama</td></tr>
+<tr><td>Silence of the Lambs<td>Apple<td>Crime, Action, Drama</td></tr>
+<tr><td>Sin City<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Sisu<td>Apple<td>Drama</td></tr>
+<tr><td>Skyfall<td>Apple 4k<td>Action</td></tr>
+<tr><td>Sleepers<td>Apple<td>Drama</td></tr>
+<tr><td>Sneakers<td>Apple<td>Action Crime</td></tr>
+<tr><td>Snowpiercer<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Solaris<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Soldier<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Son of Saul<td>Apple<td>War</td></tr>
+<tr><td>Source Code<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Space Odessy 2001<td>Apple 4k<td>Sci-Fi</td></tr>
+<tr><td>Spaceman<td>Computer<td>Sci-fi</td></tr>
+<tr><td>Spartacus<td>Computer<td>History</td></tr>
+<tr><td>Spectre - James Bond<td>Apple 4k<td>Action</td></tr>
+<tr><td>Sphere<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>SpiderMan No Way Home<td>Computer<td>Sci-fi Drama Action</td></tr>
+<tr><td>Spirited Away<td>Blu<td>Anime</td></tr>
+<tr><td>Spooks: The Greater Good<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Spotlight<td>Apple<td>Drama</td></tr>
+<tr><td>Sputnik<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Spy game<td>Computer<td>Drama, Action</td></tr>
+<tr><td>Star Trek<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Trek Beyond<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Trek Into Darkness<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Trek Next Generation<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Trek: First Contact<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Trek: Generations<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Trek: Insurrection<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Trek: Nemesis<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Wars: The Force Awakens<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Wars: The Last Jedi<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Star Wars: The Rise of Skywalker<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Stargate<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Starship Troopers<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>State of Play<td>Apple<td>Thriller</td></tr>
+<tr><td>Station Eleven<td>Computer<td>Sci-fi</td></tr>
+<tr><td>Steamboy<td>DVD<td>Anime</td></tr>
+<tr><td>Sully<td>Apple<td>Drama</td></tr>
+<tr><td>Sunset Boulevard<td>Apple<td>Drama</td></tr>
+<tr><td>Sunshine<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Sunshine <td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Sweet Smell of Success<td>Apple<td>Drama</td></tr>
+<tr><td>Synchronic<td>Apple<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Take Shelter<td>Apple<td>Drama</td></tr>
+<tr><td>Taken<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Tangled<td>Apple<td>Kids & Family</td></tr>
+<tr><td>Tar<td>Apple<td>Drama</td></tr>
+<tr><td>Tears of the Sun<td>Apple<td>War</td></tr>
+<tr><td>Tenet<td>Apple 4k<td>Sci-Fi</td></tr>
+<tr><td>Terminator 2: Judgment Day<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Terminator 3: Rise of the machines<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Terminator Dark Fate<td>Prime, Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Terminator Genisys<td>Apple 4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The 12th Man<td>Apple<td>War</td></tr>
+<tr><td>The Abyss<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Accountant<td>Apple<td>Drama</td></tr>
+<tr><td>The Adventures of Tintin<td>Blu<td>Anime</td></tr>
+<tr><td>The American<td>Computer<td>Action</td></tr>
+<tr><td>The American President<td>Apple<td>Drama</td></tr>
+<tr><td>The Avengers<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Big Blue<td>Apple<td>Drama</td></tr>
+<tr><td>The Big Lebowski<td>Apple 4k<td>Drama</td></tr>
+<tr><td>The Big Short<td>Apple<td>Drama</td></tr>
+<tr><td>The Big Sleep<td>Apple<td>Thriller</td></tr>
+<tr><td>The Birds<td>Apple<td>Horror</td></tr>
+<tr><td>The Book of Eli<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>The Book Thief<td>Blu<td>Drama</td></tr>
+<tr><td>The Bookshop<td>Computer<td>Historical, Drama / No Sub</td></tr>
+<tr><td>The Bounty<td>Apple 4k<td>Action</td></tr>
+<tr><td>The Bourne identity<td>Apple<td>Action</td></tr>
+<tr><td>The Bourne Legacy<td>Apple 4k<td>Action</td></tr>
+<tr><td>The Bourne Supremacy<td>Apple 4k<td>Action</td></tr>
+<tr><td>The Bourne Ultimatum<td>Apple 4k<td>Action</td></tr>
+<tr><td>The Breakfast Club<td>Google<td>Drama</td></tr>
+<tr><td>The Bucket List<td>Computer<td>Drama</td></tr>
+<tr><td>The Burbs<td>Apple<td>Comedy</td></tr>
+<tr><td>The Call of the Wild<td>Apple<td>Drama</td></tr>
+<tr><td>The Card Counter<td>Apple<td>Drama</td></tr>
+<tr><td>The Company You Keep<td>Computer<td>Drama Action</td></tr>
+<tr><td>The Conference<td>Apple<td>War</td></tr>
+<tr><td>The Congress<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Contender<td>Apple<td>Drama, Politics</td></tr>
+<tr><td>The Conversation<td>Blu<td>Thriller</td></tr>
+<tr><td>The Convert<td>Computer<td>Drama History</td></tr>
+<tr><td>The Core<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Covenant<td>Computer<td>War, Drama, Action</td></tr>
+<tr><td>The Craft<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Creator<td>Computer<td>Sci-fi, Action, Drama</td></tr>
+<tr><td>The Da Vinci Code -Rpt<td>Computer<td>Drama</td></tr>
+<tr><td>The Dark Knight<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Dark Knight Rises<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Day<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Day After Tomorrow<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Day the Earth Stood Still<td>Apple<td>Drama</td></tr>
+<tr><td>The Descendants<td>Computer<td>Drama</td></tr>
+<tr><td>The Dresser<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Dry<td>Apple<td>Drama</td></tr>
+<tr><td>The Edge<td>Apple<td>Drama</td></tr>
+<tr><td>The Endless<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Expanse<td>Blu<td>Sci-fi</td></tr>
+<tr><td>The Fall Guy<td>Computer<td>Drama Action Comedy</td></tr>
+<tr><td>The Farewell<td>Computer<td>Drama, Comedy / No Sub</td></tr>
+<tr><td>The Father<td>Apple<td>Drama</td></tr>
+<tr><td>The Fifth Element<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Firm<td>Apple 4k<td>Drama</td></tr>
+<tr><td>The Fisher King<td>Computer<td>Drama / No Sub</td></tr>
+<tr><td>The Gathering Storm<td>Apple<td>Drama</td></tr>
+<tr><td>The Ghost and the Darkness<td>Apple<td>Action</td></tr>
+<tr><td>The Gift<td>Apple<td>Thriller</td></tr>
+<tr><td>The Good Liar<td>Apple 4k<td>Drama</td></tr>
+<tr><td>The Grand Budapest Hotel<td>Apple<td>Comedy</td></tr>
+<tr><td>The Great Escape<td>Apple 4k<td>War</td></tr>
+<tr><td>The Great Gatsby<td>Apple<td>Drama</td></tr>
+<tr><td>The Great Wall<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Greatest Show On Earth<td>Apple<td>Drama</td></tr>
+<tr><td>The Green Room<td>Apple<td>Drama</td></tr>
+<tr><td>The Grey<td>Apple, blu ray captions<td>Drama</td></tr>
+<tr><td>The Guard<td>Apple<td>Drama</td></tr>
+<tr><td>The Highwaymen<td>Computer<td>Crime, Action, History</td></tr>
+<tr><td>The Hobbit An Unexpected Journey<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Hobbit An Unexpected Journey<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Hobbit The Battle of the Five Armies<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Hobbit The Desolation of Smaug<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Holdovers<td>Apple<td>Drama</td></tr>
+<tr><td>The Hundred Foot Journey<td>Google<td>Drama</td></tr>
+<tr><td>The Hunger Games: Mockingjay - Part 1<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Hunger Games: Mockingjay - Part 2<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Ides of March<td>Blu<td>Drama</td></tr>
+<tr><td>The Illusionist<td>Apple<td>Drama</td></tr>
+<tr><td>The Intern<td>Google<td>Drama</td></tr>
+<tr><td>The Island<td>Apple<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>The Island of Dr Moreau<td>Computer<td>Sci-Fi Fantasy / No Sub</td></tr>
+<tr><td>The Judge<td>Apple<td>Drama</td></tr>
+<tr><td>The Killer<td>Computer<td>Action, Drama</td></tr>
+<tr><td>The King's Speech<td>Blu<td>Drama</td></tr>
+<tr><td>The Knights Tale<td>Apple<td>Drama</td></tr>
+<tr><td>The Land Before Time V: The Mysterious Island<td>Apple<td>Kids & Family</td></tr>
+<tr><td>The Land of Bad<td>Computer<td>War, Action</td></tr>
+<tr><td>The Last Castle<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Last of the Mohicans<td>Apple & Blu Ray<td>Action & Adventure</td></tr>
+<tr><td>The Last of Us<td>Computer<td>Sci-fi</td></tr>
+<tr><td>The Last Samurai<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Left Hand of God<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Lincon Lawyer<td>Apple 4k<td>Drama</td></tr>
+<tr><td>The Lord of the Rings: The Fellowship of the Ring:<td>Blu, 4K disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Lord of the Rings: The Return of the King:<td>Blu 4K disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Lord of the Rings: The Two Towers:<td>Blu  4K disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Lost Boys<td>Apple<td>Fantasy</td></tr>
+<tr><td>The Lost City<td>Apple<td>Comedy</td></tr>
+<tr><td>The Lost World Jurassic Park<td>Apple<td>Fantasy</td></tr>
+<tr><td>The Magnificent Seven<td>Apple<td>Western</td></tr>
+<tr><td>The Maltese Falcon<td>Apple<td>Thriller</td></tr>
+<tr><td>The Man from U.N.C.L.E<td>Apple<td>Action</td></tr>
+<tr><td>The Man with the Iron Heart<td>Google<td>War</td></tr>
+<tr><td>The Man with the Iron Mask<td>Apple<td>History</td></tr>
+<tr><td>The Mark of Zorro<td>Google 4k<td>Action</td></tr>
+<tr><td>The Martian<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Master<td>Apple<td>Drama</td></tr>
+<tr><td>The Matrix<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Matrix Reloaded<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Matrix Revolutions<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Maze Runner<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Menu<td>Apple<td>Crime, Drama, Food</td></tr>
+<tr><td>The Mexican<td>Computer<td>Drama / No Sub</td></tr>
+<tr><td>The Mule<td>Apple<td>Drama</td></tr>
+<tr><td>The Mummy<td>4k<td>Sci-Fi Fantasy</td></tr>
+<tr><td>The Mummy Returns<td>4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Name of the Rose<td>Computer<td>Drama, History, Crime</td></tr>
+<tr><td>The Natural<td>Apple<td>Drama</td></tr>
+<tr><td>The Negotiator<td>Computer<td>Crime, Action</td></tr>
+<tr><td>The Next Three Days<td>Apple<td>Drama</td></tr>
+<tr><td>The Northman<td>Apple<td>History</td></tr>
+<tr><td>The Old Man and the Sea<td>Computer<td>Drama</td></tr>
+<tr><td>The Outfit<td>Apple<td>Crime Action</td></tr>
+<tr><td>The Outpost<td>Apple 4k<td>War</td></tr>
+<tr><td>The Outsiders<td>Apple<td>Drama</td></tr>
+<tr><td>The Peacemaker<td>Apple<td>Action</td></tr>
+<tr><td>The Perfect Storm<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Post<td>Apple<td>Thriller</td></tr>
+<tr><td>The Prestige<td>Apple<td>Drama</td></tr>
+<tr><td>The Prestige<td>Blu<td>Drama</td></tr>
+<tr><td>The Professor and the Madman<td>Apple<td>Drama</td></tr>
+<tr><td>The Promised Land<td>Computer<td>Drama, History</td></tr>
+<tr><td>The Raid<td>Google<td>Action</td></tr>
+<tr><td>The Red Baron<td>Blu ray<td>War</td></tr>
+<tr><td>The Red Turtle<td>Computer<td>Fantasy</td></tr>
+<tr><td>The Revenant<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Revenant<td>4k<td>Action & Adventure</td></tr>
+<tr><td>The Revenant<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>The Right Stuff<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>The Rock<td>Prime<td>Action & Adventure</td></tr>
+<tr><td>The School Of Rock<td>Computer<td>Drama</td></tr>
+<tr><td>The Score<td>Apple<td>Action</td></tr>
+<tr><td>The Searchers<td>Apple<td>Western</td></tr>
+<tr><td>The Secret Life of Walter Mitty<td>Computer<td>Comedy</td></tr>
+<tr><td>The Shape of Water<td>Apple<td>Drama</td></tr>
+<tr><td>The Social Network<td>Computer<td>Drama / No Sub</td></tr>
+<tr><td>The Stand<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Sting<td>Apple<td>Comedy</td></tr>
+<tr><td>The Sum of All Fears<td>Apple<td>Crime Action</td></tr>
+<tr><td>The Taking of Pelham 123<td>Apple<td>Action</td></tr>
+<tr><td>The Tale Of The Princess Kaguya<td>Blu<td>Anime</td></tr>
+<tr><td>The Ten Commandments<td>Apple<td>History</td></tr>
+<tr><td>The Thin Red Line<td>Apple 4k<td>War</td></tr>
+<tr><td>The Third Man<td>Blu<td>Drama</td></tr>
+<tr><td>The Third Man on the Mountain<td>Apple<td>Drama</td></tr>
+<tr><td>The Time Machine<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Tomorrow War<td>Computer<td>Sci-Fi, War</td></tr>
+<tr><td>The Town<td>Apple 4k<td>Action</td></tr>
+<tr><td>The Tracker<td>Apple<td>Drama</td></tr>
+<tr><td>The Traitor<td>Apple<td>Drama</td></tr>
+<tr><td>The Treasure of the Sierra Madre<td>Apple<td>Drama</td></tr>
+<tr><td>The Truman Story<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>The Untouchables<td>Apple<td>Drama</td></tr>
+<tr><td>The Valley of Elah<td>Apple<td>War</td></tr>
+<tr><td>The Wall<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>The Warlords<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>The Way<td>Apple<td>Drama</td></tr>
+<tr><td>The Way Back<td>Google<td>Drama</td></tr>
+<tr><td>The Wild Robot<td>Computer<td>Anime, Robot, Duck</td></tr>
+<tr><td>The Wind Rises<td>Blu<td>Anime</td></tr>
+<tr><td>The World's End<td>Apple<td>Comedy</td></tr>
+<tr><td>The Zone of Interest<td>Apple<td>War</td></tr>
+<tr><td>Thelma<td>Google<td>Sci-Fi</td></tr>
+<tr><td>This Beautiful Fantastic<td>Computer<td>Drama / No Sub</td></tr>
+<tr><td>Thomas Crown Affair<td>Apple<td>Drama</td></tr>
+<tr><td>Thor: Ragnarok<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Thor: The Dark World<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Three Billboards Outside Ebbing, Missouri<td>Apple<td>Drama</td></tr>
+<tr><td>Throne of Blood<td>Blu-ray<td>History Japanese</td></tr>
+<tr><td>Tinker Tailor Soldier Spy<td>Blu<td>Drama</td></tr>
+<tr><td>Titane<td>Apple<td>Drama</td></tr>
+<tr><td>Titanic<td>Apple 4k<td>Action</td></tr>
+<tr><td>To Catch a Thief<td>Apple 4k<td>Drama</td></tr>
+<tr><td>To Have and Have Not<td>Apple<td>Drama</td></tr>
+<tr><td>To Kill a Mocking Bird<td>Apple<td>Drama</td></tr>
+<tr><td>To Sir, with Love<td>Computer<td>Drama / No Sub</td></tr>
+<tr><td>Tombstone<td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Tombstone<td>Google<td>Western</td></tr>
+<tr><td>Tomorrowland<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Too Big to Fail<td>Apple<td>Drama</td></tr>
+<tr><td>Top Gun Maverick<td>Apple<td>War</td></tr>
+<tr><td>Total Recall<td>Blu<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Trainspotting 2<td>Google 4k<td>Drama</td></tr>
+<tr><td>Transcendence<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Tron: Legacy<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>True Grit<td>Apple<td>Western</td></tr>
+<tr><td>Twister<td>Computer<td>Drama, Action</td></tr>
+<tr><td>Twister<td>Apple<td>Drama</td></tr>
+<tr><td>Twisters<td>Computer<td>Action</td></tr>
+<tr><td>U-571<td>Computer<td>War</td></tr>
+<tr><td>Unbreakable<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Unforgiven<td>Apple<td>Western</td></tr>
+<tr><td>Unstoppable <td>Blu<td>Action & Adventure</td></tr>
+<tr><td>Unstoppable<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Up In the Air<td>Apple<td>Drama</td></tr>
+<tr><td>Upgrade<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>US Marshals<td>Computer<td>Action  / No Sub</td></tr>
+<tr><td>V is for Vendentta<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>Valerian and the City of a Thousand Planets<td>Apple & 4k disk<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Valkyrie<td>Google<td>War</td></tr>
+<tr><td>Venom<td>Google<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Vertical Limit<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Vertigo<td>Apple 4k<td>Drama</td></tr>
+<tr><td>Vesper<td>Apple<td>Sci-Fi</td></tr>
+<tr><td>VEXILLE<td>DVD<td>Anime</td></tr>
+<tr><td>Vivarium<td>Apple<td>Horror</td></tr>
+<tr><td>Volition<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Wall Street- Money Never Sleeps  <td>Computer<td>Drama</td></tr>
+<tr><td>Wall-E<td>Computer<td>Sci-Fi Fantasy / No Sub</td></tr>
+<tr><td>Wanted<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>War for the Planet of the Apes<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>War of the Worlds<td>Apple, Blu Ray captions<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Warrior<td>Apple 4k<td>Drama</td></tr>
+<tr><td>Watchmen<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Waterworld<td>4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>We Bought A Zoo<td>Apple<td>Drama</td></tr>
+<tr><td>We Were Soldiers<td>Apple<td>War</td></tr>
+<tr><td>Wednesday Series<td>Computer<td>Sci-Fi, Fantasy</td></tr>
+<tr><td>What Dreams May Come<td>Apple<td>Drama</td></tr>
+<tr><td>Wild<td>Apple<td>Drama</td></tr>
+<tr><td>Wild Indian<td>Apple<td>Drama</td></tr>
+<tr><td>Wild Robot<td>Computer<td>Anime, robot, animals</td></tr>
+<tr><td>Wind River<td>Apple<td>Drama</td></tr>
+<tr><td>Wings of Desire<td>Apple<td>Drama</td></tr>
+<tr><td>Wizard of Oz<td>Apple<td>Fantasy, Classic</td></tr>
+<tr><td>Wolf Hall<td>Computer<td>Historical Drama</td></tr>
+<tr><td>Wonder Woman<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>World War Z<td>Apple<td>Horror</td></tr>
+<tr><td>Wrath of Man<td>Apple<td>Action Crime</td></tr>
+<tr><td>X-Men: Days of Future Past<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>XXX<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Yesterday<td>Apple<td>Romance</td></tr>
+<tr><td>Yojimbo<td>Apple Blu-ray<td>Action & Adventure</td></tr>
+<tr><td>You were never really here<td>Apple<td>Drama</td></tr>
+<tr><td>Young Adult<td>Computer<td>Drama / No Sub</td></tr>
+<tr><td>Young Detective Dee: Rise of the Sea Dragon<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Young Guns<td>Apple<td>Western</td></tr>
+<tr><td>Young Guns 2<td>Apple<td>Western</td></tr>
+<tr><td>Your Name<td>Apple<td>Anime</td></tr>
+<tr><td>Zach Snyder's Justice League<td>Apple 4k<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Zodiac<td>Apple<td>Drama</td></tr>
+<tr><td>Zombieland<td>Apple<td>Comedy</td></tr>
+</table>
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
