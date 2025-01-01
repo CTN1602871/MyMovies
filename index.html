@@ -860,4 +860,59 @@
 <tr><td>Wall-E<td>Computer<td>Sci-Fi Fantasy / No Sub</td></tr>
 <tr><td>Wanted<td>Apple<td>Action & Adventure</td></tr>
 <tr><td>War for the Planet of the Apes<td>Apple<td>Sci-Fi & Fantasy</td></tr>
-<tr><td>War of the Worlds<td>Apple, Blu Ray capt
+<tr><td>War of the Worlds<td>Apple, Blu Ray captions<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Warrior<td>Apple 4k<td>Drama</td></tr>
+<tr><td>Watchmen<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>Waterworld<td>4k<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>We Bought A Zoo<td>Apple<td>Drama</td></tr>
+<tr><td>We Were Soldiers<td>Apple<td>War</td></tr>
+<tr><td>Wednesday Series<td>Computer<td>Sci-Fi, Fantasy</td></tr>
+<tr><td>What Dreams May Come<td>Apple<td>Drama</td></tr>
+<tr><td>Wild<td>Apple<td>Drama</td></tr>
+<tr><td>Wild Indian<td>Apple<td>Drama</td></tr>
+<tr><td>Wild Robot<td>Computer<td>Anime, robot, animals</td></tr>
+<tr><td>Wind River<td>Apple<td>Drama</td></tr>
+<tr><td>Wings of Desire<td>Apple<td>Drama</td></tr>
+<tr><td>Wizard of Oz<td>Apple<td>Fantasy, Classic</td></tr>
+<tr><td>Wolf Hall<td>Computer<td>Historical Drama</td></tr>
+<tr><td>Wonder Woman<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>World War Z<td>Apple<td>Horror</td></tr>
+<tr><td>Wrath of Man<td>Apple<td>Action Crime</td></tr>
+<tr><td>X-Men: Days of Future Past<td>Apple<td>Sci-Fi & Fantasy</td></tr>
+<tr><td>XXX<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Yesterday<td>Apple<td>Romance</td></tr>
+<tr><td>Yojimbo<td>Apple Blu-ray<td>Action & Adventure</td></tr>
+<tr><td>You were never really here<td>Apple<td>Drama</td></tr>
+<tr><td>Young Adult<td>Computer<td>Drama / No Sub</td></tr>
+<tr><td>Young Detective Dee: Rise of the Sea Dragon<td>Apple<td>Action & Adventure</td></tr>
+<tr><td>Young Guns<td>Apple<td>Western</td></tr>
+<tr><td>Young Guns 2<td>Apple<td>Western</td></tr>
+<tr><td>Your Name<td>Apple<td>Anime</td></tr>
+<tr><td>Zach Snyder's Justice League<td>Apple 4k<td>Sci-Fi & Fanatasy</td></tr>
+<tr><td>Zodiac<td>Apple<td>Drama</td></tr>
+<tr><td>Zombieland<td>Apple<td>Comedy</td></tr>
+</table>
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
